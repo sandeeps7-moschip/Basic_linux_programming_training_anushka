@@ -28,4 +28,5 @@ $(BIN_DIR)/%: $(SRC_DIR)/%.c $(DATA_DIR)
 # Clean rule
 clean:
 	rm -rf $(BIN_DIR)
+	rm -rf $(DATA_DIR)/output.txt
 	@echo "Removed '$(BIN_DIR)' directory and all executables."
