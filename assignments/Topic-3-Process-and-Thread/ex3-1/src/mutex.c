@@ -13,7 +13,7 @@ Write down a simple multiple threaded application with two threads. Each thread 
 
 /* Global variable */
 int global_var = 0;
-pthread_mutex_t mutex; /* Declaration of mutex variable */
+pthread_mutex_t mutex = PTHREAD_MUTEX_INITIALIZER;/* Declaration of mutex variable */
 
 /* Function declaration */
 void* increment(void* args);
@@ -27,7 +27,7 @@ int main() {
 	pthread_create(&thread1, NULL, increment, NULL);
 	pthread_create(&thread2, NULL, increment, NULL);
 	
-	pthread_mutex_init(&mutex, NULL); /* mutex intitalization */
+	
 	
 	/* Thread joining */
 	pthread_join(thread1, NULL);
